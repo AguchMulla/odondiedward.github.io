@@ -152,12 +152,17 @@
         }
         
         .profile-pic {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center;
-            display: block;
-            background: var(--primary);
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
         }
         
         /* Impact Stats */
