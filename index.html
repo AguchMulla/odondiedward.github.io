@@ -149,20 +149,19 @@
         .hero-image {
             display: flex;
             justify-content: center;
+            align-items: center;
         }
         
         .profile-pic {
-            width: 120px;
-            height: 120px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             border: 5px solid var(--white);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            background: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
+            background: var(--light);
         }
+        
         .profile-pic img {
             width: 100%;
             height: 100%;
@@ -170,6 +169,7 @@
             object-position: center;
             display: block;
         }
+        
         /* Impact Stats */
         .stats {
             background: var(--white);
@@ -273,7 +273,7 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
         
@@ -357,7 +357,7 @@
         
         .skills-categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
         
@@ -404,7 +404,7 @@
         /* Testimonials */
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
         
@@ -451,63 +451,54 @@
         
         /* Contact Section */
         #contact {
-            <!-- Contact Section -->
-<section id="contact">
-    <div class="container">
-        <div class="section-header">
-            <h2>Get In Touch</h2>
-            <p>Let's work together on your next project</p>
-        </div>
-        <div class="contact-content">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div>
-                        <strong>Email</strong><br>
-                        <a href="odondiedward01@gmail.com" style="color: white; text-decoration: underline;">your.email@gmail.com</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <div>
-                        <strong>Phone</strong><br>
-                        <a href="tel:+254705120562" style="color: white; text-decoration: underline;">+254 700 000 000</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div>
-                        <strong>Location</strong><br>
-                        Nairobi, Kenya
-                    </div>
-                </div>
-                
-                <div class="social-links">
-                    <a href="www.linkedin.com/in/edward-odondi-144219204" class="social-link" target="_blank" title="LinkedIn">💼</a>
-                </div>
-                
-                <div class="availability">
-                    <h3>Availability</h3>
-                    <div class="status">
-                        <div class="status-dot"></div>
-                        <span>Available for new opportunities</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="contact-info">
-                <h3 style="margin-bottom: 1rem;">Let's Connect</h3>
-                <p>I'm passionate about gender justice, M&E, and data-driven solutions. Whether you're looking for project coordination expertise, research support, or M&E framework design, I'd love to hear from you.</p>
-                <p style="margin-top: 1rem;">Feel free to reach out via email or connect with me on LinkedIn. I typically respond within 24 hours.</p>
-            </div>
-        </div>
-    </div>
-</section>
+            background: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%);
+            color: var(--white);
+        }
+        
+        #contact .section-header h2,
+        #contact .section-header p {
+            color: var(--white);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .contact-info {
+            font-size: 1.1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+        
+        .contact-item a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+        
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+        }
         
         .social-links {
             display: flex;
             gap: 1rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
         
         .social-link {
@@ -575,14 +566,42 @@
                 display: none;
             }
             
-            .hero-content,
-            .about-content,
-            .contact-content {
+            .hero {
+                padding: 100px 0 60px;
+            }
+            
+            .hero-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-image {
+                order: -1;
+                margin-bottom: 1rem;
+            }
+            
+            .profile-pic {
+                width: 180px;
+                height: 180px;
+                margin: 0 auto;
             }
             
             .hero-text h1 {
                 font-size: 2rem;
+            }
+            
+            .hero-text .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
             
             .projects-grid,
@@ -593,16 +612,14 @@
             
             .competencies {
                 grid-template-columns: 1fr;
-                .profile-pic {
-        width: 180px !important;
-        height: 180px !important;
-        margin: 2rem auto;
-    }
-    
-    .hero-image {
-        order: -1;
-    }
-    }
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 60px 0;
             }
         }
     </style>
@@ -637,10 +654,10 @@
                     </div>
                 </div>
                 <div class="hero-image">
-    <div class="profile-pic">
-        <img src="profile-photo.jpg" alt="Edward Allan Odondi">
-    </div>
-</div>
+                    <div class="profile-pic">
+                        <img src="profile-photo.jpg" alt="Edward Allan Odondi">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -913,4 +930,104 @@
     <section id="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2
+                <h2>What Colleagues Say</h2>
+                <p>Feedback from partners and collaborators</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Edward's analytical rigor and attention to detail consistently elevated our M&E processes. His ability to translate complex data into actionable insights was invaluable to our program success.</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Program Director</h4>
+                            <p>International Development Organization</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Working with Edward on gender-sensitive programming was transformative. He brought both technical excellence and a genuine commitment to centering marginalized voices in our work.</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Project Coordinator</h4>
+                            <p>Gender Justice NGO</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Edward's coordination skills and stakeholder management ensured our multi-site evaluation ran smoothly. His professionalism and collaborative approach made him a pleasure to work with.</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Research Lead</h4>
+                            <p>Evaluation Consultancy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Let's work together on your next project</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto:odondiedward01@gmail.com">odondiedward01@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            <a href="tel:+254705120562">+254 705 120 562</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Location</strong><br>
+                            Nairobi, Kenya
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="www.linkedin.com/in/edward-odondi-144219204" class="social-link" target="_blank" title="LinkedIn">💼</a>
+                    </div>
+                    
+                    <div class="availability">
+                        <h3>Availability</h3>
+                        <div class="status">
+                            <div class="status-dot"></div>
+                            <span>Available for new opportunities</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 1rem;">Let's Connect</h3>
+                    <p>I'm passionate about gender justice, M&E, and data-driven solutions. Whether you're looking for project coordination expertise, research support, or M&E framework design, I'd love to hear from you.</p>
+                    <p style="margin-top: 1rem;">Feel free to reach out via email or connect with me on LinkedIn. I typically respond within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Edward Allan Odondi. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
